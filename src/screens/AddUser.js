@@ -9,7 +9,7 @@ import {
   Alert,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-import {addUser, updateUser} from '../redux/UserSlice';
+import {addUser, updateUser} from '../redux/slices/UserSlice';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
 // create a component

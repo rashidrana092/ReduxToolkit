@@ -2,15 +2,49 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {FlatList, Text, TouchableOpacity, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {deleteUser} from '../redux/UserSlice';
+import {deleteUser} from '../redux/slices/UserSlice';
+import {increment, decrement} from '../redux/slices/counterSlice';
 
 const Users = () => {
   const navigation = useNavigation();
   const users = useSelector(state => state.user);
+  const count = useSelector(state => state.counter.value);
   const dispatch = useDispatch();
+  const uid = useSelector(state => state.id);
   console.log('users+++', users);
   return (
     <View style={{flex: 1}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          marginTop: 40,
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+        }}>
+        <TouchableOpacity
+          onPress={() => {
+            dispatch(increment());
+          }}
+          style={{
+            backgroundColor: 'lightsteelblue',
+            width: 80,
+            height: 42,
+          }}>
+          <Text style={{fontSize: 16}}>Increment</Text>
+        </TouchableOpacity>
+        <Text>{count}</Text>
+        <TouchableOpacity
+          onPress={() => {
+            dispatch(decrement());
+          }}
+          style={{
+            backgroundColor: 'lightsteelblue',
+            width: 80,
+            height: 42,
+          }}>
+          <Text style={{fontSize: 16}}>Decrement</Text>
+        </TouchableOpacity>
+      </View>
       <FlatList
         data={users.data}
         renderItem={({item, index}) => {
