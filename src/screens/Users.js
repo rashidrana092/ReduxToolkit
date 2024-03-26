@@ -10,10 +10,11 @@ const Users = () => {
   const users = useSelector(state => state.user);
   const count = useSelector(state => state.counter.value);
   const dispatch = useDispatch();
-  const uid = useSelector(state => state.id);
-  console.log('users+++', users);
+  const uid = useSelector(state => state.id.id);
+  console.log('state+++', count);
   return (
     <View style={{flex: 1}}>
+      <Text>{uid}</Text>
       <View
         style={{
           flexDirection: 'row',
@@ -27,8 +28,10 @@ const Users = () => {
           }}
           style={{
             backgroundColor: 'lightsteelblue',
-            width: 80,
+            width: 90,
             height: 42,
+            alignItems: 'center',
+            justifyContent: 'center',
           }}>
           <Text style={{fontSize: 16}}>Increment</Text>
         </TouchableOpacity>
@@ -39,8 +42,10 @@ const Users = () => {
           }}
           style={{
             backgroundColor: 'lightsteelblue',
-            width: 80,
+            width: 90,
             height: 42,
+            alignItems: 'center',
+            justifyContent: 'center',
           }}>
           <Text style={{fontSize: 16}}>Decrement</Text>
         </TouchableOpacity>

@@ -8,6 +8,7 @@ export const UserSlice = createSlice({
   reducers: {
     addUser(state, action) {
       state.data.push(action.payload);
+      //state.user = action.payload;
     },
     updateUser(state, action) {
       let temp = state.data;

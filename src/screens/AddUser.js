@@ -1,18 +1,9 @@
-//import liraries
-import React, {Component, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import {useNavigation, useRoute} from '@react-navigation/native';
+import React, {useState} from 'react';
+import {Alert, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {addUser, updateUser} from '../redux/slices/UserSlice';
-import {useNavigation, useRoute} from '@react-navigation/native';
 
-// create a component
 const AddUser = () => {
   const route = useRoute();
   const [name, setName] = useState(
