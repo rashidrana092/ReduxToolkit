@@ -14,7 +14,7 @@ const Users = () => {
   console.log('state+++', count);
   return (
     <View style={{flex: 1}}>
-      <Text>{uid}</Text>
+      <Text>{count}</Text>
       <View
         style={{
           flexDirection: 'row',
