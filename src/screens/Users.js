@@ -4,11 +4,10 @@ import {FlatList, Text, TouchableOpacity, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {deleteUser} from '../redux/slices/UserSlice';
 import {
-  increment,
   decrement,
+  increment,
   incrementByValue,
 } from '../redux/slices/counterSlice';
-import {getId} from '../redux/slices/uniqueIdSlice';
 
 const Users = () => {
   const navigation = useNavigation();
@@ -19,7 +18,9 @@ const Users = () => {
   console.log('state+++', count);
   return (
     <View style={{flex: 1}}>
-      <Text>{!!count ? count : uid}</Text>
+      <Text style={{paddingLeft: 10, marginTop: 12}}>
+        {!!count ? count : uid}
+      </Text>
       <View
         style={{
           flexDirection: 'row',
@@ -61,12 +62,14 @@ const Users = () => {
         }}
         style={{
           backgroundColor: 'lightsteelblue',
-          width: 90,
+          width: 150,
           height: 42,
           alignItems: 'center',
           justifyContent: 'center',
+          marginTop: 20,
+          alignSelf: 'center',
         }}>
-        <Text style={{fontSize: 16}}>Decrement</Text>
+        <Text style={{fontSize: 16}}>Set Counter Value</Text>
       </TouchableOpacity>
 
       <FlatList

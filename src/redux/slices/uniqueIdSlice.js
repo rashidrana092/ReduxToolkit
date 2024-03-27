@@ -10,7 +10,6 @@ const uniqueIdSlice = createSlice({
   reducers: {
     getId: state => {
       state.id;
-      // state.id += action.payload;
       // state.id.push(action.payload);  for insert valur in array
     },
   },
