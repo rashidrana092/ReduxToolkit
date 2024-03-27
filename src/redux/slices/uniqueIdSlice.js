@@ -8,9 +8,9 @@ const uniqueIdSlice = createSlice({
   name: 'id',
   initialState: {id: nanoid()},
   reducers: {
-    getId: (state, action) => {
-      // state.id;
-      state.id = action.payload;
+    getId: state => {
+      state.id;
+      // state.id += action.payload;
       // state.id.push(action.payload);  for insert valur in array
     },
   },
